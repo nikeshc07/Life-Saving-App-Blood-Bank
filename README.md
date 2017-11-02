@@ -1,6 +1,7 @@
 # BloodDonor
 
-#Software required:
+#Software Required:
+                    
                     java,Apache Tomcat,Android Studio 2.3.3 or higher, sdk used 18 or higher.
 
 #Prerequisits:
