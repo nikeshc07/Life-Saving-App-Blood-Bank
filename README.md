@@ -1,10 +1,10 @@
 # BloodDonor
 
-#Software Required:
+# Software Required:
                     
                     java,Apache Tomcat,Android Studio 2.3.3 or higher, sdk used 12 or higher.
 
-#Prerequisits:
+# Prerequisits:
 
                1)By opening the app Login and Signup should be present.
                2)By clicking login an intent must be opened and in that the user name password and login button must be shown.
