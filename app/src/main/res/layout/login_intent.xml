@@ -17,6 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/ET_login_password"
         android:layout_alignEnd="@+id/ET_login_password"
+
         android:layout_marginTop="76dp" />
 
     <EditText
