@@ -1,6 +1,6 @@
 # BloodDonor
 
-#Software required:Android Studio 2.3.3 or higher, sdk used 18 or higher.
+#Software required:java,Apache Tomcat,Android Studio 2.3.3 or higher, sdk used 18 or higher.
 
 #Prerequisits: 1)By opening the app Login and Signup should be present.
                2)By clicking login an intent must be opened and in that the user name password and login button must be shown.
@@ -18,7 +18,3 @@
                           3)for execution you can use an AVD device or an usb debuggable android mobile containing sdk minimum level 12.
                           4)find run in the Run tab and execute.
                           5)If your gradle was not built successfully then clean the project and build it again in the Build menu.
-
-
-
-
