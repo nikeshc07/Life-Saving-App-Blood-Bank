@@ -2,7 +2,6 @@ package com.example.satwik.blooddonor;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -15,9 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.Spinner;
-
-import static android.R.attr.id;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,7 +35,7 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-        final Button login=(Button) findViewById(R.id.login);
+        final Button login=(Button) findViewById(R.id.button_login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,7 +43,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
-         Button signup=(Button) findViewById(R.id.signup_button);
+         Button signup=(Button) findViewById(R.id.button_signup);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,7 +100,9 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.string.Donate) {
+        if (id == R.id.ET_password) {
+
+
 
         } else if (id == R.string.list) {
 

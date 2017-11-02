@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/ET_login_username"
         android:layout_width="258dp"
         android:layout_height="49dp"
         android:ems="10"
@@ -15,12 +15,12 @@
         tools:layout_editor_absoluteX="63dp"
         tools:layout_editor_absoluteY="76dp"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2"
+        android:layout_alignRight="@+id/ET_login_password"
+        android:layout_alignEnd="@+id/ET_login_password"
         android:layout_marginTop="76dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/ET_login_password"
         android:layout_width="257dp"
         android:layout_height="54dp"
         android:ems="10"
@@ -29,11 +29,11 @@
         tools:layout_editor_absoluteX="64dp"
         tools:layout_editor_absoluteY="146dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/name"
+        android:layout_below="@+id/ET_login_username"
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="login"
@@ -46,7 +46,7 @@
         android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
+        android:layout_below="@+id/btn_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
         android:text="Forgot Password ?"
