@@ -15,7 +15,7 @@
                7)if a person is in a need of blood very urgently it must show the blood donors nearby.
                8)if the person has already donated the blood then he should update the date when he has given blood and should be calculated by the present date.
                9)the location of the blood donor must be shown in the google maps by the area or by the mobile number tracking or by the address.
-               10_Logout must also be added in the drawer
+               10)Logout must also be added in the drawer
                11)Beta app should be released.
                
 
