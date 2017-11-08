@@ -1,10 +1,10 @@
 # BloodDonor
 
-# Software Required:
+# Softwares Required:
                     
                     java,Apache Tomcat,Android Studio 2.3.3 or higher, sdk used 12 or higher.
 
-# Prerequisits:
+# Current Goals:
 
                1)By opening the app Login and Signup should be present.
                2)By clicking login an intent must be opened and in that the user name password and login button must be shown.
@@ -18,6 +18,12 @@
                10)Logout must also be added in the drawer
                11)Beta app should be released.
                
+ # Current Status:
+   
+   
+   
+   
+   
 
 # Compiling instructions:
                           1)Open Android Studio 2.3.3 and import the project from the git.
