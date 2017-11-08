@@ -19,6 +19,8 @@
                11)Beta app should be released.
                
  # Current Status:
+                1)
+                
    
    
    
