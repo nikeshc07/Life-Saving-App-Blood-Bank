@@ -1,6 +1,8 @@
 # BloodDonor
 
 # Description: 
+                
+                This is an Application for helping the people in the need of Blood and those who want to Donate the blood.There are many applications on this theme but we want to provide a new schema as locating using the mobile device location.
 
 
 
@@ -23,14 +25,9 @@
                11)Beta app should be released.
                
  # Current Status:
-                1)
-                2)
-                3)
-                
-                
-   
-   
-   
+                1)Intents created
+                2)Registration and Login pages created.
+
    
    
 
