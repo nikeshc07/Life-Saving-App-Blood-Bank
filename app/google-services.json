@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "728926755664",
+    "firebase_url": "https://blooddonor-98107.firebaseio.com",
+    "project_id": "blooddonor-98107",
+    "storage_bucket": "blooddonor-98107.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728926755664:android:2b4cfca868b7987f",
+        "android_client_info": {
+          "package_name": "com.example.satwik.blooddonor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728926755664-nha1ofd1mbn8getcfrjgakq7uj24p8h6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.satwik.blooddonor",
+            "certificate_hash": "3ac6a0cb96b92d5561456fdba1f418a9a2c63b34"
+          }
+        },
+        {
+          "client_id": "728926755664-olp5f5f0pqorstgmfvg41iaa2e7hbkpr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ3keuXqDyOPAhI9INhuyrZm6Vo0f6Atc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728926755664-olp5f5f0pqorstgmfvg41iaa2e7hbkpr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

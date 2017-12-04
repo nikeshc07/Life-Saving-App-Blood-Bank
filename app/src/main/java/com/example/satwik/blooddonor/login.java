@@ -8,22 +8,27 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 /**
  * Created by satwik on 20-09-2017.
  */
 
 public class login extends Activity {
 private String entered_username;
-    private String serverUrl="http://192.168.31.8/blood_donor/index.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceStale)
     {
         super.onCreate(savedInstanceStale);
+
         setContentView(R.layout.login_intent);
         final EditText login_username=(EditText)findViewById(R.id.ET_login_username);
         final EditText login_password=(EditText)findViewById(R.id.ET_login_password);
         Button login_button=(Button)findViewById(R.id.btn_login);
+        // Write a message to the database
+
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
