@@ -25,9 +25,6 @@ import static android.app.PendingIntent.getActivity;
 import static android.widget.Toast.LENGTH_SHORT;
 
 
-/**
- * Created by satwik on 20-09-2017.
- */
 
 public class signup extends Activity  {
     private FirebaseAuth auth;
@@ -108,14 +105,8 @@ public class signup extends Activity  {
             }
         });
     }
-
     @Override
     protected void onResume() {
         super.onResume();
     }
-
-
 }
-
-
-
