@@ -5,22 +5,29 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
+<android.support.design.widget.TextInputLayout
+    android:id="@+id/textinputlayout_username"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:layout_marginStart="48dp"
+    android:layout_marginEnd="48dp"
+    android:layout_marginTop="55dp">
 
     <EditText
         android:id="@+id/ET_login_username"
-        android:layout_width="258dp"
-        android:layout_height="49dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/ET_login_password"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/ET_login_password"
+        android:layout_marginTop="76dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="76dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/ET_login_password"
-        android:layout_alignEnd="@+id/ET_login_password"
+        tools:layout_editor_absoluteY="76dp" />
+</android.support.design.widget.TextInputLayout>
 
-        android:layout_marginTop="76dp" />
 
     <Button
         android:id="@+id/btn_login"
@@ -43,16 +50,28 @@
         android:textSize="18sp"
         android:textStyle="normal|bold" />
 
+<android.support.design.widget.TextInputLayout
+    android:id="@+id/textinputlayout_pwd"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="48dp"
+    android:layout_marginEnd="48dp"
+    android:layout_marginTop="120dp"
+
+    >
+
     <EditText
         android:id="@+id/ET_login_password"
-        android:layout_width="257dp"
-        android:layout_height="54dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="146dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/ET_login_username"
-        android:layout_centerHorizontal="true" />
+        tools:layout_editor_absoluteY="146dp" />
+</android.support.design.widget.TextInputLayout>
 </RelativeLayout>

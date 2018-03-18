@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
         return true;
     }
 
@@ -86,10 +87,6 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -100,16 +97,20 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        if(id==R.id.ID_menudonate)
+        {
+
+            Intent nav_donate=new Intent(MainActivity.this,login.class);
+            startActivity(nav_donate);
+            Toast.makeText(MainActivity.this,"login and use the services",Toast.LENGTH_LONG).show();
+            return true;
+        }
+
         if (id == R.id.ET_password) {
-
-
 
         } else if (id == R.string.list) {
 
         }
-
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

@@ -8,7 +8,9 @@
     <string name="blood">Blood</string>
 
     <string name="action_settings">feedback</string>
+    <string name="password">Password</string>
     <string-array name="bloodgroups">
+        <item>Blood Group</item>
         <item>A</item>
         <item>A+</item>
         <item>B</item>
@@ -24,6 +26,7 @@
     </string-array>
     
     <string-array name="states">
+        <item>STATES</item>
         <item>Andhra Pradesh</item>
         <item>Arunachal Pradesh</item>
         <item>Asssam</item>
