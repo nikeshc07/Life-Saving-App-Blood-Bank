@@ -46,4 +46,9 @@ log_out.setOnClickListener(new View.OnClickListener() {
 });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+   setContentView(R.layout.after_login);
+    }
 }
