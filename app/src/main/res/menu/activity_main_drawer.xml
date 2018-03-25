@@ -15,7 +15,12 @@
             android:id="@string/blood"
             android:icon="@drawable/ic__takeblood"
             android:title="Request Blood"
-/>
+            />
+        <item
+            android:id="@string/logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout"/>
+
    </group>
 
 </menu>

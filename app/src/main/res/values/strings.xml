@@ -9,6 +9,7 @@
 
     <string name="action_settings">feedback</string>
     <string name="password">Password</string>
+    <string name="logout">Logout</string>
     <string-array name="bloodgroups">
         <item>Blood Group</item>
         <item>A</item>

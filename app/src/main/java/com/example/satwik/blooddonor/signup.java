@@ -30,6 +30,7 @@ public class signup extends Activity  {
     private FirebaseAuth auth;
     private ProgressDialog progressdialogue;
     private String entered_user_name,entered_password,entered_retype_password,entered_name,entered_city;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceStale) {
@@ -54,7 +55,7 @@ public class signup extends Activity  {
         entered_retype_password=Re_type_Passwordc.getText().toString();
         entered_name=name.getText().toString();
         entered_city=city.getText().toString();
-
+progressDialog=new ProgressDialog(this);
         final EditText pwd=(EditText)findViewById(R.id.ET_password);
         org_name.setVisibility(View.GONE);
         org_phno.setVisibility(View.GONE);
@@ -82,7 +83,8 @@ public class signup extends Activity  {
             public void onClick(View view) {
                 String email=e_mail.getText().toString().trim();
                 String Password=password.getText().toString().trim();
-
+                progressDialog.setMessage("Registering user..");
+                progressDialog.show();
                 //create user
                 auth.createUserWithEmailAndPassword(email, Password)
                         .addOnCompleteListener(signup.this, new OnCompleteListener<AuthResult>() {
@@ -98,7 +100,7 @@ public class signup extends Activity  {
                                 } else {
                                     startActivity(new Intent(signup.this, main_screen.class));
                                     finish();
-                                }
+                                }progressDialog.dismiss();
                             }
                         });
 

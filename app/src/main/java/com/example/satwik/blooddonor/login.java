@@ -1,56 +1,92 @@
 package com.example.satwik.blooddonor;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.w3c.dom.Text;
 
-public class login extends Activity {
+
+public class login extends Activity implements View.OnClickListener{
 private String entered_username;
+private ProgressDialog progressDialog;
+private FirebaseAuth auth;
+private Button login_button;
+private EditText login_username;
+private EditText login_password;
     @Override
     protected void onCreate(Bundle savedInstanceStale)
     {
         super.onCreate(savedInstanceStale);
-
         setContentView(R.layout.login_intent);
-        final EditText login_username=(EditText)findViewById(R.id.ET_login_username);
-        final EditText login_password=(EditText)findViewById(R.id.ET_login_password);
-        Button login_button=(Button)findViewById(R.id.btn_login);
+        auth=FirebaseAuth.getInstance();
+        progressDialog=new ProgressDialog(this);
+        login_username=(EditText)findViewById(R.id.ET_login_username);
+        login_password=(EditText)findViewById(R.id.ET_login_password);
+        login_button=(Button)findViewById(R.id.btn_login);
+        login_button.setOnClickListener(this);
+        if(auth.getCurrentUser()!=null){
+            startActivity(new Intent(getApplicationContext(),main_screen.class));
+        }
+    }
+    private void UserLogin()
+    {
+        String _login_email=login_username.getText().toString().trim();
+        String _login_pwd=login_password.getText().toString().trim();
 
-        // Write a message to the database
-
-        login_button.setOnClickListener(new View.OnClickListener() {
+        if(TextUtils.isEmpty(_login_email)){
+            //email empty
+            Toast.makeText(this,"enter email",Toast.LENGTH_LONG).show();
+            return;
+        }
+        if(TextUtils.isEmpty(_login_pwd)){
+            Toast.makeText(this,"enter password",Toast.LENGTH_LONG).show();
+            return;
+        }
+        progressDialog.setMessage("Logging in...");
+        progressDialog.show();
+        auth.signInWithEmailAndPassword(_login_email,_login_pwd).addOnCompleteListener(login.this, new OnCompleteListener<AuthResult>() {
             @Override
-            public void onClick(View view) {
-                String _username="samhith";
-                String _pwd="123456";
-                entered_username = login_username.getText().toString();
-                String entered_password = login_password.getText().toString();
-                if (entered_username.length() <= 1 || entered_password.length() <= 1 || entered_username.equals("") || entered_password.equals("")) {
-                    Toast.makeText(login.this, "please enter valid username and password", Toast.LENGTH_LONG).show();
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful())
+                {
+                    finish();
+                    startActivity(new Intent(getApplicationContext(),main_screen.class));
 
-                }
-                else if(_username.equals(entered_username)&&_pwd.equals(entered_password)){
-
-                    Intent it=new Intent(login.this,main_screen.class);
-                    startActivity(it);
                 }
                 else
                 {
-                 Toast.makeText(login.this,"Username or password is incorrect",Toast.LENGTH_LONG).show();
-
+                    Toast.makeText(getApplicationContext(),"please try again",Toast.LENGTH_LONG).show();
+                return;
                 }
+                progressDialog.dismiss();
             }
         });
 
     }
 
+    @Override
+    public void onClick(View view) {
+
+        if(view == login_button){
+            UserLogin();
+        }
+
+    }
 }
