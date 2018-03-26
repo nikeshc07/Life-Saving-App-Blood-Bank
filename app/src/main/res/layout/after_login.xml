@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/colorAccent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#ed1c1c">
 
 
     <Button
@@ -14,6 +17,7 @@
         android:layout_alignLeft="@+id/circle_btn_request_blood"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/circle_btn_request_blood"
+        android:layout_marginTop="23dp"
         android:background="@drawable/round_button"
         android:gravity="center_vertical|center_horizontal"
         android:text="Donate Blood"
@@ -39,6 +43,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
         android:background="@drawable/round_button"
+        android:layout_marginBottom="20dp"
         android:text="logout" />
 
-</RelativeLayout>
+</LinearLayout>
