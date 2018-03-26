@@ -6,7 +6,6 @@
     android:background="@color/colorAccent">
 
 
-
     <Button
         android:id="@+id/circle_btn_donate"
         android:layout_width="200dp"
@@ -15,7 +14,6 @@
         android:layout_alignLeft="@+id/circle_btn_request_blood"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/circle_btn_request_blood"
-        android:layout_marginTop="31dp"
         android:background="@drawable/round_button"
         android:gravity="center_vertical|center_horizontal"
         android:text="Donate Blood"
@@ -27,7 +25,7 @@
         android:layout_height="200dp"
         android:layout_below="@+id/circle_btn_donate"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="11dp"
         android:background="@drawable/round_button"
         android:gravity="center_vertical|center_horizontal"
         android:text="Request Blood"
@@ -37,9 +35,10 @@
         android:id="@+id/circle_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/circle_btn_request_blood"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
         android:background="@drawable/round_button"
-        android:text="logout"/>
+        android:text="logout" />
 
 </RelativeLayout>

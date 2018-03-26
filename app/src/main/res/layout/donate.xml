@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@mipmap/background">
 
     <Spinner
         android:id="@+id/ID_bloodgrps"
@@ -26,24 +27,12 @@
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/donate_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ID_bloodgrps"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="NAME"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_below="@+id/editText"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="37dp"
         android:ems="10"
         android:hint="AGE"
         android:inputType="number" />
@@ -52,7 +41,7 @@
         android:id="@+id/ID_donatesubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/donate_age"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="52dp"
         android:text="Submit" />

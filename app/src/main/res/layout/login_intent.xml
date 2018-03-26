@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+android:background="@mipmap/background"
     >
 
 <android.support.design.widget.TextInputLayout
@@ -39,7 +39,8 @@
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="231dp"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#67c9d6"/>
 
     <TextView
         android:id="@+id/forgotPassword"
@@ -50,7 +51,8 @@
         android:layout_marginTop="34dp"
         android:text="Forgot Password ?"
         android:textSize="18sp"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:textColor="#000000"/>
 
 <android.support.design.widget.TextInputLayout
     android:id="@+id/textinputlayout_pwd"

@@ -20,12 +20,13 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+private FirebaseAuth authuser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
 
 
@@ -96,18 +97,23 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        authuser=FirebaseAuth.getInstance();
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if(id==R.id.ID_menudonate)
-        {
+        if(id==R.id.ID_menudonate) {
 
-            Intent nav_donate=new Intent(MainActivity.this,login.class);
-            startActivity(nav_donate);
-            Toast.makeText(MainActivity.this,"login and use the services",Toast.LENGTH_LONG).show();
-            return true;
+            if (authuser.getCurrentUser() == null) {
+                Intent nav_donate = new Intent(MainActivity.this, login.class);
+                startActivity(nav_donate);
+                Toast.makeText(MainActivity.this, "login and use the services", Toast.LENGTH_LONG).show();
+                return true;
+            }
+            else
+            {
+                startActivity(new Intent(getApplicationContext(),donate.class));
+            }
         }
-
         if (id == R.id.ET_password) {
 
         } else if (id == R.string.list) {

@@ -1,5 +1,6 @@
 package com.example.satwik.blooddonor;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,7 +12,7 @@ import android.support.v7.app.AppCompatActivity;
  * Created by satwik on 26-03-2018.
  */
 
-public class startup_image extends AppCompatActivity{
+public class startup_image extends Activity{
     private static boolean splashLoaded = false;
 
     @Override
