@@ -133,6 +133,8 @@ public class signup extends Activity {
 
         userInformation user_info = new userInformation(entered_user_name, entered_password, entered_retype_password, entered_name, entered_city, entered_state, entered_mobile_number, entered_bloodgroup, entered_age, entered_email, entered_permanentAddress);
         FirebaseUser user = auth.getCurrentUser();
+
+
         databaseReference.child(user.getUid()).setValue(user_info);
         Toast.makeText(this, "saving info..", Toast.LENGTH_SHORT).show();
 
