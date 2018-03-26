@@ -23,18 +23,21 @@ import com.google.firebase.database.FirebaseDatabase;
 import static android.app.PendingIntent.getActivity;
 
 
-public class signup extends Activity  {
+public class signup extends Activity {
     private FirebaseAuth auth;
     private ProgressDialog progressdialogue;
-    private String entered_user_name,entered_password,entered_retype_password,entered_name,entered_city;
+    private String entered_user_name, entered_password, entered_retype_password, entered_permanentAddress, entered_name, entered_city, entered_state, entered_mobile_number, entered_bloodgroup, entered_age, entered_email;
     private ProgressDialog progressDialog;
     private DatabaseReference databaseReference;
     private EditText user_name;
     private EditText password;
-    private  Button register;
+    private Button register;
     private EditText Re_type_Password;
     private EditText name;
-
+    private EditText city;
+    private Spinner state, bloodgroup;
+    private EditText e_mail;
+    private EditText mobile_number, Age, permanentAddress;
 
 
     @Override
@@ -43,49 +46,61 @@ public class signup extends Activity  {
 
         setContentView(R.layout.signup);
         auth = FirebaseAuth.getInstance();
-databaseReference =FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        CheckBox cb=(CheckBox)findViewById(R.id.CB_member_org);
-        final EditText org_name=(EditText)findViewById(R.id.ET_org_name_in_signup);
-        final EditText org_phno=(EditText)findViewById(R.id.ET_org_mobileno_in_signup);
-        user_name=(EditText)findViewById(R.id.ET_user_name);
-        password=(EditText)findViewById(R.id.ET_password);
-        final EditText e_mail=(EditText)findViewById(R.id.ET_emailid);
-        Re_type_Password=(EditText)findViewById(R.id.ET_retype_password);
-        EditText name=(EditText)findViewById(R.id.ET_NAME);
-        EditText city=(EditText)findViewById(R.id.ET_AREA);
-        Spinner state=(Spinner)findViewById(R.id.Spinner_state);
-        register=(Button)findViewById(R.id.btn_register);
+        CheckBox cb = (CheckBox) findViewById(R.id.CB_member_org);
+        final EditText org_name = (EditText) findViewById(R.id.ET_org_name_in_signup);
+        final EditText org_phno = (EditText) findViewById(R.id.ET_org_mobileno_in_signup);
+        user_name = (EditText) findViewById(R.id.ET_user_name);
+        password = (EditText) findViewById(R.id.ET_password);
+        e_mail = (EditText) findViewById(R.id.ET_emailid);
+        Re_type_Password = (EditText) findViewById(R.id.ET_retype_password);
+        name = (EditText) findViewById(R.id.ET_NAME);
+        city = (EditText) findViewById(R.id.ET_AREA);
+        state = (Spinner) findViewById(R.id.Spinner_state);
+        register = (Button) findViewById(R.id.btn_register);
+        bloodgroup = (Spinner) findViewById(R.id.Spinner_BloodGroup);
+        mobile_number = (EditText) findViewById(R.id.ET_MOBILE);
+        Age = (EditText) findViewById(R.id.ET_age);
+        permanentAddress = (EditText) findViewById(R.id.ET_Address);
+        entered_user_name = user_name.getText().toString().trim();
+        entered_password = password.getText().toString().trim();
+        entered_retype_password = Re_type_Password.getText().toString().trim();
+        entered_name = name.getText().toString().trim();
+        entered_city = city.getText().toString().trim();
+        entered_state = state.getSelectedItem().toString().trim();
+        entered_mobile_number = mobile_number.getText().toString().trim();
+        entered_bloodgroup = bloodgroup.getSelectedItem().toString().trim();
+        entered_age = Age.getText().toString().trim();
+        entered_email = e_mail.getText().toString();
+        entered_permanentAddress = permanentAddress.getText().toString().trim();
 
-
-progressDialog=new ProgressDialog(this);
-        final EditText pwd=(EditText)findViewById(R.id.ET_password);
+        progressDialog = new ProgressDialog(this);
         org_name.setVisibility(View.GONE);
         org_phno.setVisibility(View.GONE);
 
 
-       cb.setOnClickListener(new View.OnClickListener(){
+        cb.setOnClickListener(new View.OnClickListener() {
 
-           @Override
-           public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
 
 
-               if(((CheckBox) view).isChecked()){
-                   org_name.setVisibility(View.VISIBLE);
-                   org_phno.setVisibility(View.VISIBLE);
+                if (((CheckBox) view).isChecked()) {
+                    org_name.setVisibility(View.VISIBLE);
+                    org_phno.setVisibility(View.VISIBLE);
 
-               }else
-               {
-                   org_name.setVisibility(View.GONE);
-                   org_phno.setVisibility(View.GONE);
-               }
-           }
-       });
+                } else {
+                    org_name.setVisibility(View.GONE);
+                    org_phno.setVisibility(View.GONE);
+                }
+            }
+        });
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email=e_mail.getText().toString().trim();
-                String Password=password.getText().toString().trim();
+                String email = e_mail.getText().toString().trim();
+                String Password = password.getText().toString().trim();
                 progressDialog.setMessage("Registering user..");
                 progressDialog.show();
                 //create user
@@ -105,26 +120,29 @@ progressDialog=new ProgressDialog(this);
                                     saveDBInformation();
                                     startActivity(new Intent(signup.this, main_screen.class));
                                     finish();
-                                }progressDialog.dismiss();
+                                }
+                                progressDialog.dismiss();
                             }
                         });
 
             }
         });
     }
-    private void saveDBInformation()
-    {
-        entered_user_name=user_name.getText().toString().trim();
-        entered_password=password.getText().toString().trim();
-        userInformation user_info=new userInformation(entered_user_name,entered_password);
-        FirebaseUser user=auth.getCurrentUser();
-databaseReference.child(user.getUid()).setValue(user_info);
-Toast.makeText(this,"saving info..",Toast.LENGTH_SHORT).show();
+
+    private void saveDBInformation() {
+
+        userInformation user_info = new userInformation(entered_user_name, entered_password, entered_retype_password, entered_name, entered_city, entered_state, entered_mobile_number, entered_bloodgroup, entered_age, entered_email, entered_permanentAddress);
+        FirebaseUser user = auth.getCurrentUser();
+        databaseReference.child(user.getUid()).setValue(user_info);
+        Toast.makeText(this, "saving info..", Toast.LENGTH_SHORT).show();
 
 
     }
+
     @Override
     protected void onResume() {
+
         super.onResume();
+
     }
 }

@@ -27,7 +27,8 @@ android:background="@mipmap/background"
         android:hint="Username"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="76dp" />
+        tools:layout_editor_absoluteY="76dp"
+        android:textColor="#f21014"/>
 </android.support.design.widget.TextInputLayout>
 
 
@@ -73,6 +74,7 @@ android:background="@mipmap/background"
         android:layout_marginBottom="26dp"
         android:ems="10"
         android:hint="Password"
+        android:textColor="#f21014"
         android:inputType="textPassword"
         android:visibility="visible"
         tools:layout_editor_absoluteX="64dp"

@@ -20,7 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-private FirebaseAuth authuser;
+    private FirebaseAuth authuser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,7 @@ private FirebaseAuth authuser;
         setSupportActionBar(toolbar);
 
 
-         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,19 +39,19 @@ private FirebaseAuth authuser;
                         .setAction("Action", null).show();
             }
         });
-        Button login=(Button)findViewById(R.id.button_login);
+        Button login = (Button) findViewById(R.id.button_login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,login.class);
+                Intent intent = new Intent(MainActivity.this, login.class);
                 startActivity(intent);
             }
         });
-        Button signup=(Button) findViewById(R.id.button_signup);
+        Button signup = (Button) findViewById(R.id.button_signup);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1=new Intent(MainActivity.this,signup.class);
+                Intent intent1 = new Intent(MainActivity.this, signup.class);
                 startActivity(intent1);
             }
         });
@@ -97,21 +98,19 @@ private FirebaseAuth authuser;
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        authuser=FirebaseAuth.getInstance();
+        authuser = FirebaseAuth.getInstance();
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if(id==R.id.ID_menudonate) {
+        if (id == R.id.ID_menudonate) {
 
             if (authuser.getCurrentUser() == null) {
                 Intent nav_donate = new Intent(MainActivity.this, login.class);
                 startActivity(nav_donate);
                 Toast.makeText(MainActivity.this, "login and use the services", Toast.LENGTH_LONG).show();
                 return true;
-            }
-            else
-            {
-                startActivity(new Intent(getApplicationContext(),donate.class));
+            } else {
+                startActivity(new Intent(getApplicationContext(), donate.class));
             }
         }
         if (id == R.id.ET_password) {

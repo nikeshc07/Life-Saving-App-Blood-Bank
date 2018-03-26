@@ -65,11 +65,12 @@ public class main_screen extends Activity implements NavigationView.OnNavigation
 
 
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-startActivity(new Intent(getBaseContext(),main_screen.class));
-    finish();
+        startActivity(new Intent(getBaseContext(), main_screen.class));
+        finish();
 
     }
 
@@ -78,5 +79,6 @@ startActivity(new Intent(getBaseContext(),main_screen.class));
         int id = item.getItemId();
 
 
-        return super.onOptionsItemSelected(item);    }
+        return super.onOptionsItemSelected(item);
+    }
 }
