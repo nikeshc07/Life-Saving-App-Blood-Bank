@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#ed1c1c">
+  android:background="#ffffff">
 
 
     <Button

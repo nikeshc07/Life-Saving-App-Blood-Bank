@@ -67,8 +67,6 @@ public class signup extends Activity {
         progressDialog = new ProgressDialog(this);
         org_name.setVisibility(View.GONE);
         org_phno.setVisibility(View.GONE);
-
-
         cb.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -106,6 +104,18 @@ public class signup extends Activity {
                                     Toast.makeText(signup.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_LONG).show();
                                 } else {
+                                    entered_user_name = user_name.getText().toString().trim();
+                                    entered_password = password.getText().toString().trim();
+                                    entered_retype_password = Re_type_Password.getText().toString().trim();
+                                    entered_name = name.getText().toString().trim();
+                                    entered_city = city.getText().toString().trim();
+                                    entered_state = state.getSelectedItem().toString().trim();
+                                    entered_mobile_number = mobile_number.getText().toString().trim();
+                                    entered_bloodgroup = bloodgroup.getSelectedItem().toString().trim();
+                                    entered_age = Age.getText().toString().trim();
+                                    entered_email = e_mail.getText().toString();
+                                    entered_permanentAddress = permanentAddress.getText().toString().trim();
+
                                     saveDBInformation();
                                     startActivity(new Intent(signup.this, main_screen.class));
                                     finish();
@@ -119,17 +129,7 @@ public class signup extends Activity {
     }
 
     private void saveDBInformation() {
-        entered_user_name = user_name.getText().toString().trim();
-        entered_password = password.getText().toString().trim();
-        entered_retype_password = Re_type_Password.getText().toString().trim();
-        entered_name = name.getText().toString().trim();
-        entered_city = city.getText().toString().trim();
-        entered_state = state.getSelectedItem().toString().trim();
-        entered_mobile_number = mobile_number.getText().toString().trim();
-        entered_bloodgroup = bloodgroup.getSelectedItem().toString().trim();
-        entered_age = Age.getText().toString().trim();
-        entered_email = e_mail.getText().toString();
-        entered_permanentAddress = permanentAddress.getText().toString().trim();
+
 
         userInformation user_info = new userInformation(entered_user_name, entered_password, entered_retype_password, entered_name, entered_city, entered_state, entered_mobile_number, entered_bloodgroup, entered_age, entered_email, entered_permanentAddress);
         FirebaseUser user = auth.getCurrentUser();

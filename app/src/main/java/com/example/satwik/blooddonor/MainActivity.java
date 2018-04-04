@@ -21,6 +21,8 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private FirebaseAuth authuser;
+    public    DrawerLayout drawer;
+    private  ActionBarDrawerToggle toggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +58,8 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+         toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();

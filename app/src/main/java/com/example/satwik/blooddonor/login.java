@@ -72,7 +72,8 @@ private EditText login_password;
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(),"please try again",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"enter valid credentials",Toast.LENGTH_LONG).show();
+                    progressDialog.dismiss();
                 return;
                 }
                 progressDialog.dismiss();

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:background="@mipmap/background"
+
     >
 
 <android.support.design.widget.TextInputLayout
@@ -28,7 +28,7 @@ android:background="@mipmap/background"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="63dp"
         tools:layout_editor_absoluteY="76dp"
-        android:textColor="#f21014"/>
+        />
 </android.support.design.widget.TextInputLayout>
 
 
@@ -74,10 +74,21 @@ android:background="@mipmap/background"
         android:layout_marginBottom="26dp"
         android:ems="10"
         android:hint="Password"
-        android:textColor="#f21014"
         android:inputType="textPassword"
         android:visibility="visible"
         tools:layout_editor_absoluteX="64dp"
         tools:layout_editor_absoluteY="146dp" />
 </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="13dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/btn_login"
+        android:layout_toRightOf="@+id/btn_login"
+        app:srcCompat="@mipmap/background" />
 </RelativeLayout>
