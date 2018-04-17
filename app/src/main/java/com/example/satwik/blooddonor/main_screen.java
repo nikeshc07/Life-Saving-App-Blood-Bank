@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -28,8 +29,7 @@ public class main_screen extends Activity implements NavigationView.OnNavigation
     private Button log_out;
     private Button donate;
     private ProgressDialog progressDialog;
-    public    DrawerLayout drawer;
-
+    public DrawerLayout drawer;
 
 
     protected void onCreate(Bundle savedInstanceStale) {
@@ -52,15 +52,19 @@ public class main_screen extends Activity implements NavigationView.OnNavigation
 
             @Override
             public void onClick(View view) {
-
+                progressDialog.setMessage("logging out...");
+                progressDialog.show();
                 firebaseauth.signOut();
-                finish();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        progressDialog.dismiss();
+                    }
+                }, 3000);
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                progressDialog.dismiss();
             }
         });
-
-
     }
 
     @Override
@@ -102,8 +106,8 @@ public class main_screen extends Activity implements NavigationView.OnNavigation
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public void onResume()
-    {
+
+    public void onResume() {
         super.onResume();
 
     }

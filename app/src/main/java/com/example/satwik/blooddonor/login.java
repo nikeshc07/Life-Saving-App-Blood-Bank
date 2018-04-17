@@ -30,6 +30,7 @@ private FirebaseAuth auth;
 private Button login_button;
 private EditText login_username;
 private EditText login_password;
+private TextView forgotPassword;
     @Override
     protected void onCreate(Bundle savedInstanceStale)
     {
@@ -40,7 +41,14 @@ private EditText login_password;
         login_username=(EditText)findViewById(R.id.ET_login_username);
         login_password=(EditText)findViewById(R.id.ET_login_password);
         login_button=(Button)findViewById(R.id.btn_login);
+        forgotPassword=(TextView)findViewById(R.id.forgotPassword);
         login_button.setOnClickListener(this);
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+Intent i=new Intent(login.this,forgot_password.class);
+startActivity(i);         }
+        });
         if(auth.getCurrentUser()!=null){
             startActivity(new Intent(getApplicationContext(),main_screen.class));
         }
@@ -88,6 +96,7 @@ private EditText login_password;
         if(view == login_button){
             UserLogin();
         }
+
 
     }
 }

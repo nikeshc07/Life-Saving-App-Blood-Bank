@@ -62,10 +62,10 @@ android:background="@mipmap/background"
     android:layout_marginStart="48dp"
     android:layout_marginEnd="48dp"
     android:layout_marginTop="120dp"
-
+app:passwordToggleEnabled="true"
     >
 
-    <EditText
+    <android.support.design.widget.TextInputEditText
         android:id="@+id/ET_login_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
