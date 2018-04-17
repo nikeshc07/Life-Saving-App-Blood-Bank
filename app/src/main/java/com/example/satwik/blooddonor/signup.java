@@ -5,6 +5,8 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -63,15 +65,24 @@ public class signup extends Activity {
         mobile_number = (EditText) findViewById(R.id.ET_MOBILE);
         Age = (EditText) findViewById(R.id.ET_age);
         permanentAddress = (EditText) findViewById(R.id.ET_Address);
-
         progressDialog = new ProgressDialog(this);
         org_name.setVisibility(View.GONE);
         org_phno.setVisibility(View.GONE);
+        entered_user_name = user_name.getText().toString().trim();
+        entered_password = password.getText().toString().trim();
+        entered_retype_password = Re_type_Password.getText().toString().trim();
+        entered_name = name.getText().toString().trim();
+        entered_city = city.getText().toString().trim();
+        entered_state = state.getSelectedItem().toString().trim();
+        entered_mobile_number = mobile_number.getText().toString().trim();
+        entered_bloodgroup = bloodgroup.getSelectedItem().toString().trim();
+        entered_age = Age.getText().toString().trim();
+        entered_email = e_mail.getText().toString();
+        entered_permanentAddress = permanentAddress.getText().toString().trim();
         cb.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-
 
                 if (((CheckBox) view).isChecked()) {
                     org_name.setVisibility(View.VISIBLE);
@@ -83,11 +94,48 @@ public class signup extends Activity {
                 }
             }
         });
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = e_mail.getText().toString().trim();
-                String Password = password.getText().toString().trim();
+                if (user_name.getText().toString().trim().equalsIgnoreCase("")) {
+                    user_name.setError("enter username");
+                    return;
+                }else{
+                    user_name.setError(null);
+                }
+                if (password.getText().toString().trim().length() <= 8){
+                    password.setError("password must contain more than 8 characters ");
+                    return;
+                }
+
+                String email="";
+                        String Password="";
+
+                try
+                {
+                   email= e_mail.getText().toString().trim();
+                    Password = password.getText().toString().trim();
+                    if(email.equals("")||email.equals(null))
+                    {
+                        e_mail.setError("enter email");
+                        return;
+                    }else
+                    {
+                        e_mail.setError(null);
+                    }
+                    if(Password.equals(null)||Password.equals(""))
+                    {
+                        password.setError("password must contain more than 8 characters");
+                        return;
+                    }else
+                    {
+                        password.setError(null);
+                    }
+                }catch(Exception e)
+                {
+                    Toast.makeText(signup.this,""+e,Toast.LENGTH_LONG).show();
+                }
                 progressDialog.setMessage("Registering user..");
                 progressDialog.show();
                 //create user
@@ -100,22 +148,12 @@ public class signup extends Activity {
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
 
+
+
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(signup.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_LONG).show();
                                 } else {
-                                    entered_user_name = user_name.getText().toString().trim();
-                                    entered_password = password.getText().toString().trim();
-                                    entered_retype_password = Re_type_Password.getText().toString().trim();
-                                    entered_name = name.getText().toString().trim();
-                                    entered_city = city.getText().toString().trim();
-                                    entered_state = state.getSelectedItem().toString().trim();
-                                    entered_mobile_number = mobile_number.getText().toString().trim();
-                                    entered_bloodgroup = bloodgroup.getSelectedItem().toString().trim();
-                                    entered_age = Age.getText().toString().trim();
-                                    entered_email = e_mail.getText().toString();
-                                    entered_permanentAddress = permanentAddress.getText().toString().trim();
-
                                     saveDBInformation();
                                     startActivity(new Intent(signup.this, main_screen.class));
                                     finish();

@@ -43,15 +43,4 @@ public class startup_image extends Activity{
             }
         }, SPLASH_TIME_OUT);
 
-    auth=FirebaseAuth.getInstance();
-    if(auth.getCurrentUser()==null)
-    {
-        setContentView(R.layout.activity_main);
-    }
-    else
-    {
-        setContentView(R.layout.after_login);
-    }
-    }
-
-}
+    }}

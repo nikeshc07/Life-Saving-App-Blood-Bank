@@ -102,4 +102,9 @@ public class main_screen extends Activity implements NavigationView.OnNavigation
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    public void onResume()
+    {
+        super.onResume();
+
+    }
 }
