@@ -63,19 +63,16 @@ public class main_screen extends Activity implements NavigationView.OnNavigation
                     }
                 }, 3000);
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
             }
         });
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        }
+
         super.onBackPressed();
         startActivity(new Intent(getBaseContext(), main_screen.class));
-        finish();
 
     }
 

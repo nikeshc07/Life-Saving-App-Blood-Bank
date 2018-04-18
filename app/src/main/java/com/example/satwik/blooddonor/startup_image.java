@@ -43,4 +43,6 @@ public class startup_image extends Activity{
             }
         }, SPLASH_TIME_OUT);
 
-    }}
+    }
+
+}
