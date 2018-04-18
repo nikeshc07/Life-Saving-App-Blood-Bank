@@ -15,7 +15,8 @@
         android:layout_marginBottom="19dp"
         app:srcCompat="@mipmap/mrec_xxxhdpi"
         android:layout_alignBottom="@+id/mreclogo"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        tools:ignore="UnknownId" />
 
     <TextView
         android:id="@+id/TV_Quote"
