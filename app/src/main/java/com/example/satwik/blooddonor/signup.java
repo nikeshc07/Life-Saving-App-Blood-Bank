@@ -68,17 +68,7 @@ public class signup extends Activity {
         progressDialog = new ProgressDialog(this);
         org_name.setVisibility(View.GONE);
         org_phno.setVisibility(View.GONE);
-        entered_user_name = user_name.getText().toString().trim();
-        entered_password = password.getText().toString().trim();
-        entered_retype_password = Re_type_Password.getText().toString().trim();
-        entered_name = name.getText().toString().trim();
-        entered_city = city.getText().toString().trim();
-        entered_state = state.getSelectedItem().toString().trim();
-        entered_mobile_number = mobile_number.getText().toString().trim();
-        entered_bloodgroup = bloodgroup.getSelectedItem().toString().trim();
-        entered_age = Age.getText().toString().trim();
-        entered_email = e_mail.getText().toString();
-        entered_permanentAddress = permanentAddress.getText().toString().trim();
+
         cb.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -136,6 +126,17 @@ public class signup extends Activity {
                 {
                     Toast.makeText(signup.this,""+e,Toast.LENGTH_LONG).show();
                 }
+                entered_user_name = user_name.getText().toString().trim();
+                entered_password = password.getText().toString().trim();
+                entered_retype_password = Re_type_Password.getText().toString().trim();
+                entered_name = name.getText().toString().trim();
+                entered_city = city.getText().toString().trim();
+                entered_state = state.getSelectedItem().toString().trim();
+                entered_mobile_number = mobile_number.getText().toString().trim();
+                entered_bloodgroup = bloodgroup.getSelectedItem().toString().trim();
+                entered_age = Age.getText().toString().trim();
+                entered_email = e_mail.getText().toString();
+                entered_permanentAddress = permanentAddress.getText().toString().trim();
                 progressDialog.setMessage("Registering user..");
                 progressDialog.show();
                 //create user
@@ -147,9 +148,6 @@ public class signup extends Activity {
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
-
-
-
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(signup.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_LONG).show();
