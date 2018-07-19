@@ -2,7 +2,7 @@
 
 # Description: 
                 
-                This is an Application for helping the people in the need of Blood and those who want to Donate the blood.There are many applications on this theme but we want to provide a new schema as locating using the mobile device location.
+     This is an Application for helping the people in the need of Blood and those who want to Donate the blood.There are many applications on this theme but we want to provide a new schema as locating using the mobile device location.
 
 
 
@@ -11,7 +11,6 @@
              java,Firebase,Android Studio 2.3.3 or higher, sdk used 12 or higher.
 
 # Current Goals:
-
                1)By opening the app Login and Signup should be present.
                2)By clicking login an intent must be opened and in that the user name password and login button must be shown.
                3)On clicking signup the registration of the user must be shown.
