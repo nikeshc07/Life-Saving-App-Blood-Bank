@@ -8,15 +8,12 @@
   android:background="@mipmap/background"
     tools:showIn="@layout/app_bar_after_login"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-
     >
-
 
     <Button
         android:id="@+id/circle_btn_donate"
         android:layout_width="200dp"
         android:layout_height="200dp"
-
         android:layout_alignLeft="@+id/circle_btn_request_blood"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/circle_btn_request_blood"
