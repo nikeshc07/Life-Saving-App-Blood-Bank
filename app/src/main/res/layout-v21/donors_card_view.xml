@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardCornerRadius="12dp"
+    android:layout_margin="7dp"
+    android:elevation="99dp"
+    app:cardBackgroundColor="#699"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="248dp"
+    android:orientation="vertical"
+    android:background="#699"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+         android:id="@+id/CV_imageview"/>
+    <TextView
+        android:id="@+id/CV_name"
+        android:layout_width="194dp"
+        android:layout_height="47dp"
+        android:hint="Name"
+        android:textColor="#ffff"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/CV_bloodgrp"
+        android:layout_width="194dp"
+        android:layout_height="49dp"
+        android:layout_above="@+id/CV_age"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Blood Group"
+        android:textColor="#ffff"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/CV_age"
+        android:layout_width="194dp"
+        android:layout_height="49dp"
+        android:layout_above="@+id/CV_email"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="AGE"
+        android:textColor="#ffff"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/CV_email"
+        android:layout_width="194dp"
+        android:layout_height="49dp"
+        android:layout_above="@+id/CV_mobile"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="7dp"
+        android:hint="email_id"
+        android:textColor="#ffff"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/CV_mobile"
+        android:layout_width="194dp"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Mobile number"
+        android:textColor="#ffff"
+        android:textSize="25sp" />
+
+</RelativeLayout>
+</android.support.v7.widget.CardView>

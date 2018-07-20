@@ -31,4 +31,48 @@ public class userInformation {
         this._emailid = _emailid;
         this._permanentAddress = _permanentAddress;
     }
+
+    public String get_username() {
+        return _username;
+    }
+
+    public String get_password() {
+        return _password;
+    }
+
+    public String get_retype_pwd() {
+        return _retype_pwd;
+    }
+
+    public String get_name() {
+        return _name;
+    }
+
+    public String get_city() {
+        return _city;
+    }
+
+    public String get_state() {
+        return _state;
+    }
+
+    public String get_mobile() {
+        return _mobile;
+    }
+
+    public String get_bloodgroup() {
+        return _bloodgroup;
+    }
+
+    public String get_Age() {
+        return _Age;
+    }
+
+    public String get_emailid() {
+        return _emailid;
+    }
+
+    public String get_permanentAddress() {
+        return _permanentAddress;
+    }
 }
