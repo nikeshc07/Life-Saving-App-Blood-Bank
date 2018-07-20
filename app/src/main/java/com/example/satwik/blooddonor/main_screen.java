@@ -29,6 +29,7 @@ public class main_screen extends Activity implements NavigationView.OnNavigation
     private FirebaseAuth firebaseauth;
     private Button log_out;
     private Button donate;
+    private Button request_blood;
     private ProgressDialog progressDialog;
     public    DrawerLayout drawer;
     private  ActionBarDrawerToggle toggle;
@@ -40,6 +41,7 @@ public class main_screen extends Activity implements NavigationView.OnNavigation
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         donate = (Button) findViewById(R.id.circle_btn_donate);
         log_out = (Button) findViewById(R.id.circle_logout);
+        request_blood=(Button)findViewById(R.id.circle_btn_request_blood);
         progressDialog = new ProgressDialog(this);
         firebaseauth = FirebaseAuth.getInstance();
         donate.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +51,13 @@ public class main_screen extends Activity implements NavigationView.OnNavigation
                 startActivity(intent);
             }
         });
-
+        request_blood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(getApplication(),reciever_info.class);
+                startActivity(i);
+            }
+        });
         log_out.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -68,6 +76,7 @@ public class main_screen extends Activity implements NavigationView.OnNavigation
                 finish();
             }
         });
+
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
